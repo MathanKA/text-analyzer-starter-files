@@ -3,42 +3,60 @@
 <head>
     <title>Text analyzer</title>
     <meta charset="utf-8">
-
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <meta name="description" content="text analyzer">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="main.css">
+
+
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-default">
+            <a class="navbar-brand" href="#">Text analzyer</a>
+        </nav>
+    </header>
+
     <div class="container">
         <main>
-            <h1>Text analzyer</h1>
+            <div class="panel panel-default">
+                <div class="panel-heading">
             <p>Paste in text below, submit, and get some basic stats back.</p>
-            <form>
+              </div>
+            <div class="panel-body">
+            <form class="js-form">
                 <div>
                     <label for="user-text">Text to analyze</label>
-                    <textarea cols="60" rows="20" id="user-text" name="user-text" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." required></textarea>
+                    <textarea class="form-control" cols="10" rows="5" id="user-text" name="user-text" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." required></textarea>
                 </div>
-                <div>
-                    <button type="submit">Analyze it!</button>
+                <div style="padding:10px;">
+                    <button class="btn btn-success" type="submit">Analyze it!</button>
                 </div>
             </form>
 
-            <dl class="hidden text-report">
-                <dt>Word count</dt>
-                <dd></dd>
+            <dl class="hidden text-report js-report">
+                <dt class="label label-primary">Word count</dt>
+                <dd class="js-word-count"></dd>
 
-                <dt>Unique word count</dt>
-                <dd></dd>
+                <dt class="label label-success">Unique word count</dt>
+                <dd class="js-unique-word"></dd>
 
-                <dt>Average word length</dt>
-                <dd></dd>
+                <dt class="label label-info">Average word length</dt>
+                <dd class="js-average-word-length"></dd>
 
-                <dt>Average sentence length</dt>
-                <dd></dd>
+                <dt class="label label-warning">Average sentence length</dt>
+                <dd class="js-average-sentence-length"></dd>
             </dl>
+              </div>
+            </div>
         </main>
     </div>
 
-    <!-- link to jquery -->
-    <!-- link to your app.js -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script type="text/javascript" src="app.js"></script>
+
 </body>
 </html>
